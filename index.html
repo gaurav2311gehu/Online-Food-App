@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Royal Dhaba</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Eczar:wght@400;500;600;700;800&family=Rozha+One&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              turmeric: "#FFC000",
+              "turmeric-dark": "#E0A800",
+              maroon: "#5D001E",
+              "maroon-light": "#7A0026",
+              ink: "#1A1A1A",
+              paper: "#FDF6E3",
+            },
+            fontFamily: {
+              rozha: ['"Rozha One"', "serif"],
+              eczar: ['"Eczar"', "serif"],
+            },
+            backgroundImage: {
+              "vintage-paper": "url('https://www.transparenttextures.com/patterns/aged-paper.png')",
+            },
+            animation: {
+              "sway-slow": "sway 4s ease-in-out infinite",
+              "sway-medium": "sway 3s ease-in-out infinite",
+              "sway-fast": "sway 2.5s ease-in-out infinite",
+              "spin-slow": "spin 12s linear infinite",
+            },
+            keyframes: {
+              sway: {
+                "0%, 100%": { transform: "rotate(-3deg)" },
+                "50%": { transform: "rotate(3deg)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      /* Custom scrollbar for a vintage feel */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #ffc000;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #5d001e;
+        border-radius: 5px;
+        border: 2px solid #ffc000;
+      }
+      
+      /* Noise texture overlay class */
+      .bg-noise {
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.1'/%3E%3C/svg%3E");
+      }
+
+      .text-shadow-retro {
+        text-shadow: 2px 2px 0px rgba(93, 0, 30, 0.2);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
