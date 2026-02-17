@@ -9,25 +9,30 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+    
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'
+      - name: Login to Docker Hub
+        run: echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build the app
-        run: npm run dev
-
-      - name: Deploy to server
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          SERVER_USER: ${{ secrets.SERVER_USER }}
-          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+      - name: Build and push Docker image
         run: |
-          echo "$SSH_PRIVATE_KEY" > private_key.pem
-          chmod 600 private_key.pem
-          scp -i private_key.pem -r ./build/* $SERVER_USER@$SERVER_HOST:/var/www/food-app/
-          rm private_key.pem
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/food-app:latest .
+          docker push ${{ secrets.DOCKER_USERNAME }}/food-app:latest
+
+      - name: SSH into EC2 and deploy
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USER }}
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            docker pull ${{ secrets.DOCKER_USERNAME }}/food-app:latest
+            docker stop food-app || true
+            docker rm food-app || true
+            docker run -d  \
+                -p 3000:3000 \ 
+                --name food-app \
+                --restart always \
+                ${{ secrets.DOCKER_USERNAME }}/food-app:latest
