@@ -14,7 +14,7 @@ export const menuData: MenuSectionType[] = [
         price: 50,
         isVeg: true,
         spicyLevel: 3,
-        imageUrl: '/images/Pani Puri.jpg'
+        imageUrl: '/images/pani-puri.jpg'
       },
       {
         id: 'c2',
@@ -24,7 +24,7 @@ export const menuData: MenuSectionType[] = [
         price: 80,
         isVeg: true,
         spicyLevel: 2,
-        imageUrl: '/images/Aaloo Tikki.jpg'
+        imageUrl: '/images/aaloo-tikki.jpg'
       },
       {
         id: 'c3',
@@ -44,7 +44,7 @@ export const menuData: MenuSectionType[] = [
         price: 90,
         isVeg: true,
         spicyLevel: 1,
-        imageUrl: '/images/Dahi Puri.jpg'
+        imageUrl: '/images/dahi-puri.jpg'
       }
     ]
   },
@@ -61,7 +61,7 @@ export const menuData: MenuSectionType[] = [
         price: 150,
         isVeg: true,
         spicyLevel: 2,
-        imageUrl: '/images/Chole Bhature.jpg',
+        imageUrl: '/images/chole-bhature.jpg',
       },
       {
         id: 'm2',
@@ -71,7 +71,7 @@ export const menuData: MenuSectionType[] = [
         price: 180,
         isVeg: true,
         spicyLevel: 1,
-        imageUrl: '/images/Sarso ka Saag.jpg'
+        imageUrl: '/images/saag.jpg'
       },
       {
         id: 'm3',
@@ -81,7 +81,7 @@ export const menuData: MenuSectionType[] = [
         price: 220,
         isVeg: true,
         spicyLevel: 1,
-        imageUrl: '/images/Paneer Butter Masala.jpg'
+        imageUrl: '/images/paneer.jpg'
       },
       {
         id: 'm4',
@@ -91,7 +91,7 @@ export const menuData: MenuSectionType[] = [
         price: 120,
         isVeg: true,
         spicyLevel: 2,
-        imageUrl: '/images/Amritsari-Kulcha.jpg'
+        imageUrl: '/images/amritsari-kulcha.jpg'
       }
     ]
   },
@@ -108,7 +108,7 @@ export const menuData: MenuSectionType[] = [
         price: 60,
         isVeg: true,
         spicyLevel: 1,
-        imageUrl: '/images/Jalebi.jpg'
+        imageUrl: '/images/jalebi.jpg'
       },
       {
         id: 's2',
@@ -118,7 +118,7 @@ export const menuData: MenuSectionType[] = [
         price: 80,
         isVeg: true,
         spicyLevel: 1,
-        imageUrl: '/images/Lassi.jpg'
+        imageUrl: '/images/lassi.jpg'
       },
       {
         id: 's3',
@@ -128,7 +128,7 @@ export const menuData: MenuSectionType[] = [
         price: 70,
         isVeg: true,
         spicyLevel: 1,
-        imageUrl: '/images/Gulab Jamun.jpg'
+        imageUrl: '/images/gulab-jamun.jpg'
       }
     ]
   }
