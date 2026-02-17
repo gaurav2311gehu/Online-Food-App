@@ -28,11 +28,11 @@ jobs:
           username: ${{ secrets.EC2_USER }}
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/food-app:latest
+            docker pull ${{ secrets.DOCKER_USERNAME }}/food-app:latest
             docker stop food-app || true
             docker rm food-app || true
             docker run -d \
                 -p 3000:3000 \
                 --name food-app \
                 --restart always \
-                ${{ secrets.DOCKERHUB_USERNAME }}/food-app:latest
+                ${{ secrets.DOCKER_USERNAME }}/food-app:latest
