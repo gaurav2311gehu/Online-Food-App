@@ -32,7 +32,7 @@ jobs:
             docker stop food-app || true
             docker rm food-app || true
             docker run -d \
-                -p 3000:3000 \
+                -p 80:3000 \
                 --name food-app \
                 --restart always \
                 ${{ secrets.DOCKER_USERNAME }}/food-app:latest
